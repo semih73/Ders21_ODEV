@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -53,5 +54,9 @@ public class Ders21Xpath1 {
             String Metin=okuMetin.getText();
             Assert.assertEquals(Metin, "You have done a dynamic click");
         }
+    @AfterSuite
+    public void close() {
+        webDriver.quitDriver();
+    }
     }
 

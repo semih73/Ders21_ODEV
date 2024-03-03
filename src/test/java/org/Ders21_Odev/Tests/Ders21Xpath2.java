@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -121,5 +122,9 @@ public class Ders21Xpath2 {
         WebElement newage = driver.findElement(By.xpath("//div[contains(text(),'45')]"));
         String text = newage.getText();
         Assert.assertEquals(text, "45");
+    }
+    @AfterSuite
+    public void close() {
+        webDriver.quitDriver();
     }
 }
